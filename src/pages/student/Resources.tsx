@@ -10,12 +10,12 @@ import type { ResourceType, SharedResourceItem } from '../../types/student'
 const RESOURCE_TYPES: ResourceType[] = ['Study Notes', 'Documents', 'Useful Links', 'Videos', 'Assignments', 'Other']
 
 const typeStyles: Record<ResourceType, string> = {
-  'Study Notes': 'bg-cyan-400/15 text-cyan-100 border-cyan-300/20',
-  Documents: 'bg-violet-400/15 text-violet-100 border-violet-300/20',
-  'Useful Links': 'bg-emerald-400/15 text-emerald-100 border-emerald-300/20',
-  Videos: 'bg-rose-400/15 text-rose-100 border-rose-300/20',
-  Assignments: 'bg-amber-400/15 text-amber-100 border-amber-300/20',
-  Other: 'bg-white/10 text-white border-white/15',
+  'Study Notes': 'bg-mauve/35 text-ivory border-mauve/70',
+  Documents: 'bg-plum/85 text-ivory/95 border-mauve/50',
+  'Useful Links': 'bg-ivory/10 text-ivory border-ivory/30',
+  Videos: 'bg-blush/15 text-blush border-blush/40',
+  Assignments: 'bg-mauve/15 text-blush border-mauve/70',
+  Other: 'bg-ivory/5 text-ivory/70 border-plum',
 }
 
 export default function StudentResourcesPage() {
@@ -79,8 +79,8 @@ export default function StudentResourcesPage() {
   }
 
   const inputClass =
-    'w-full liquid-glass rounded-2xl px-4 py-3 bg-transparent text-white placeholder:text-white/40 text-sm outline-none'
-  const labelClass = 'block text-white/55 text-xs uppercase tracking-wide mb-2'
+    'w-full liquid-glass rounded-2xl px-4 py-3 bg-transparent text-ivory placeholder:text-ivory/40 text-sm outline-none'
+  const labelClass = 'block text-ivory/55 text-xs uppercase tracking-wide mb-2'
 
   return (
     <StudentLayout>
@@ -89,7 +89,7 @@ export default function StudentResourcesPage() {
           <div className="flex justify-between items-center gap-4 flex-wrap">
             <Link
               to="/student/dashboard"
-              className="liquid-glass rounded-full px-5 py-2 text-white/80 hover:text-white text-sm font-medium flex items-center gap-2 transition-colors"
+              className="liquid-glass rounded-full px-5 py-2 text-ivory/80 hover:text-ivory text-sm font-medium flex items-center gap-2 transition-colors"
             >
               <ArrowLeft size={16} />
               Back to Dashboard
@@ -98,29 +98,29 @@ export default function StudentResourcesPage() {
 
           <div className="max-w-3xl">
             <h1
-              className="text-4xl md:text-5xl text-white tracking-tight"
+              className="text-4xl md:text-5xl text-ivory tracking-tight"
               style={{ fontFamily: "'Instrument Serif', serif" }}
             >
               Resources
             </h1>
-            <p className="text-white/55 text-sm mt-2">Share and discover study material with your group.</p>
+            <p className="text-ivory/55 text-sm mt-2">Share and discover study material with your group.</p>
           </div>
 
           <GlassCard className="p-6 md:p-8">
-            <div className="flex items-center gap-3 mb-6 text-white">
-              <Upload size={18} className="text-cyan-400" />
+            <div className="flex items-center gap-3 mb-6 text-ivory">
+              <Upload size={18} className="text-blush" />
               <h2 className="text-2xl" style={{ fontFamily: "'Instrument Serif', serif" }}>
                 Share a Resource
               </h2>
             </div>
 
             {notice ? (
-              <div className="liquid-glass rounded-2xl border border-emerald-400/25 px-4 py-3 text-xs text-emerald-100 mb-5">
+              <div className="liquid-glass rounded-2xl border border-ivory/30 px-4 py-3 text-xs text-ivory mb-5">
                 {notice}
               </div>
             ) : null}
             {error ? (
-              <div className="liquid-glass rounded-2xl border border-rose-400/25 px-4 py-3 text-xs text-rose-100 mb-5">
+              <div className="liquid-glass rounded-2xl border border-blush/35 px-4 py-3 text-xs text-blush mb-5">
                 {error}
               </div>
             ) : null}
@@ -145,7 +145,7 @@ export default function StudentResourcesPage() {
                   className={inputClass}
                 >
                   {RESOURCE_TYPES.map((type) => (
-                    <option key={type} value={type} className="bg-black">
+                    <option key={type} value={type} className="bg-ink">
                       {type}
                     </option>
                   ))}
@@ -169,14 +169,14 @@ export default function StudentResourcesPage() {
                   ref={fileInputRef}
                   type="file"
                   onChange={(event) => setFile(event.target.files?.[0] ?? null)}
-                  className={`${inputClass} file:mr-3 file:rounded-full file:border-0 file:bg-white file:px-4 file:py-2 file:text-xs file:font-medium file:text-black`}
+                  className={`${inputClass} file:mr-3 file:rounded-full file:border-0 file:bg-blush file:px-4 file:py-2 file:text-xs file:font-medium file:text-ink`}
                 />
               </div>
               <div className="md:col-span-2">
                 <button
                   type="submit"
                   disabled={sharing}
-                  className="rounded-full px-6 py-3 bg-white text-black text-sm font-medium flex items-center gap-2 transition-colors hover:bg-white/90 disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="rounded-full px-6 py-3 bg-blush text-ink text-sm font-medium flex items-center gap-2 transition-colors hover:bg-blush/90 disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   <Plus size={16} />
                   {sharing ? 'Sharing...' : 'Share Resource'}
@@ -186,34 +186,34 @@ export default function StudentResourcesPage() {
           </GlassCard>
 
           <div>
-            <div className="flex items-center gap-3 mb-5 text-white">
-              <FolderOpen size={18} className="text-violet-400" />
+            <div className="flex items-center gap-3 mb-5 text-ivory">
+              <FolderOpen size={18} className="text-blush" />
               <h2 className="text-2xl" style={{ fontFamily: "'Instrument Serif', serif" }}>
                 Shared Resources
               </h2>
             </div>
 
             {error && resources.length === 0 ? (
-              <GlassCard className="p-8 text-center text-rose-100 border border-rose-400/25 bg-rose-500/10">
+              <GlassCard className="p-8 text-center text-blush border border-blush/35 bg-blush/12">
                 {error}
               </GlassCard>
             ) : loading ? (
-              <GlassCard className="p-8 text-center text-white/70">Loading resources...</GlassCard>
+              <GlassCard className="p-8 text-center text-ivory/70">Loading resources...</GlassCard>
             ) : resources.length === 0 ? (
               <GlassCard className="py-16 text-center">
-                <FolderOpen size={36} className="mx-auto text-white/30 mb-4" />
-                <p className="text-white/55 text-sm">No resources shared yet.</p>
+                <FolderOpen size={36} className="mx-auto text-ivory/30 mb-4" />
+                <p className="text-ivory/55 text-sm">No resources shared yet.</p>
               </GlassCard>
             ) : (
               <div className="space-y-3">
                 {resources.map((resource) => (
                   <GlassCard key={resource.id} className="p-5 flex items-center gap-4">
-                    <div className="w-11 h-11 rounded-xl liquid-glass flex items-center justify-center text-white flex-shrink-0">
+                    <div className="w-11 h-11 rounded-xl liquid-glass flex items-center justify-center text-ivory flex-shrink-0">
                       {resource.url ? <Link2 size={18} /> : <FileText size={18} />}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-white text-sm font-medium truncate">{resource.title}</p>
-                      <p className="text-white/45 text-xs mt-0.5 truncate">
+                      <p className="text-ivory text-sm font-medium truncate">{resource.title}</p>
+                      <p className="text-ivory/45 text-xs mt-0.5 truncate">
                         {resource.fileName ?? resource.url} · shared by {resource.uploader} ·{' '}
                         {new Date(resource.createdAt).toLocaleDateString()}
                       </p>
@@ -229,7 +229,7 @@ export default function StudentResourcesPage() {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={`Open ${resource.title}`}
-                        className="rounded-full w-10 h-10 liquid-glass text-white/70 hover:text-white flex items-center justify-center flex-shrink-0 transition-colors"
+                        className="rounded-full w-10 h-10 liquid-glass text-ivory/70 hover:text-ivory flex items-center justify-center flex-shrink-0 transition-colors"
                       >
                         <ExternalLink size={16} />
                       </a>

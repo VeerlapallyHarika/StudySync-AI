@@ -18,8 +18,8 @@ export default function Navbar() {
       <div className="liquid-glass rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between max-w-5xl mx-auto">
         <div className="flex items-center gap-4 sm:gap-8 min-w-0">
           <Link to="/" className="flex items-center gap-2 min-w-0" onClick={() => setOpen(false)}>
-            <Brain size={24} className="text-white flex-shrink-0" />
-            <span className="text-white font-semibold text-lg truncate">
+            <Brain size={24} className="text-ivory flex-shrink-0" />
+            <span className="text-ivory font-semibold text-lg truncate">
               StudySync AI
             </span>
           </Link>
@@ -28,7 +28,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 to={link.to}
-                className="text-white/80 hover:text-white transition-colors text-sm font-medium"
+                className="text-ivory/80 hover:text-ivory transition-colors text-sm font-medium"
               >
                 {link.label}
               </Link>
@@ -39,13 +39,13 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             to="/student/login"
-            className="text-white text-sm font-medium hover:text-white/80 transition-colors"
+            className="text-ivory text-sm font-medium hover:text-ivory/80 transition-colors"
           >
             Student Login
           </Link>
           <Link
             to="/student/register"
-            className="bg-white rounded-full px-6 py-2 text-black text-sm font-semibold hover:bg-white/90 transition-colors"
+            className="bg-blush rounded-full px-6 py-2 text-ink text-sm font-semibold hover:bg-blush/90 transition-colors"
           >
             Get Started
           </Link>
@@ -53,7 +53,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="md:hidden text-white p-2 -mr-1 flex-shrink-0"
+          className="md:hidden text-ivory p-2 -mr-1 flex-shrink-0"
           onClick={() => setOpen((current) => !current)}
           aria-label={open ? 'Close navigation' : 'Open navigation'}
           aria-expanded={open}
@@ -70,24 +70,24 @@ export default function Navbar() {
                 key={link.label}
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className="text-white/85 hover:text-white transition-colors text-sm font-medium px-4 py-3 rounded-xl hover:bg-white/5"
+                className="text-ivory/85 hover:text-ivory transition-colors text-sm font-medium px-4 py-3 rounded-xl hover:bg-mauve/20"
               >
                 {link.label}
               </Link>
             ))}
-            <div className="h-px bg-white/10 my-2" />
+            <div className="h-px bg-ivory/10 my-2" />
             <div className="flex flex-col gap-2">
               <Link
                 to="/student/login"
                 onClick={() => setOpen(false)}
-                className="text-white/85 hover:text-white transition-colors text-sm font-medium px-4 py-3 rounded-xl hover:bg-white/5"
+                className="text-ivory/85 hover:text-ivory transition-colors text-sm font-medium px-4 py-3 rounded-xl hover:bg-mauve/20"
               >
                 Student Login
               </Link>
               <Link
                 to="/student/register"
                 onClick={() => setOpen(false)}
-                className="bg-white rounded-full px-4 py-3 text-black text-sm font-semibold text-center transition-colors hover:bg-white/90"
+                className="bg-blush rounded-full px-4 py-3 text-ink text-sm font-semibold text-center transition-colors hover:bg-blush/90"
               >
                 Get Started
               </Link>

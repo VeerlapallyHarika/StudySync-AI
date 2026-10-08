@@ -18,9 +18,9 @@ export default function ActionButton({
   const base = 'rounded-full px-5 py-3 text-sm font-medium flex items-center gap-2 transition-colors'
 
   const styles: Record<NonNullable<ActionButtonProps['variant']>, string> = {
-    glass: 'liquid-glass text-white hover:bg-white/5',
-    solid: 'bg-white text-black hover:bg-white/90',
-    danger: 'liquid-glass text-rose-200 hover:bg-rose-500/10',
+    glass: 'liquid-glass text-ivory hover:bg-mauve/20',
+    solid: 'bg-blush text-ink hover:bg-blush/90',
+    danger: 'liquid-glass text-blush hover:bg-blush/12',
   }
 
   return (

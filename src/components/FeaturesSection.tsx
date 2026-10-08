@@ -47,12 +47,12 @@ export default function FeaturesSection() {
       <div className="max-w-5xl mx-auto">
         <Reveal className="text-center mb-14">
           <h2
-            className="text-4xl md:text-5xl text-white mb-5 tracking-tight"
+            className="text-4xl md:text-5xl text-ivory mb-5 tracking-tight"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             Built to balance every group
           </h2>
-          <p className="text-white/60 text-base max-w-[700px] mx-auto leading-relaxed">
+          <p className="text-ivory/60 text-base max-w-[700px] mx-auto leading-relaxed">
             Every stage of the pipeline, from profiling to reporting, works
             together to keep collaboration fair and effective.
           </p>
@@ -63,14 +63,14 @@ export default function FeaturesSection() {
             const Icon = feature.icon
             return (
               <Reveal key={feature.title} delayMs={i * 90}>
-                <div className="liquid-glass rounded-2xl p-8 h-full hover:bg-white/5 transition-colors">
+                <div className="liquid-glass rounded-2xl p-8 h-full hover:bg-mauve/20 transition-colors">
                   <div className="w-12 h-12 rounded-full liquid-glass flex items-center justify-center mb-6">
-                    <Icon size={22} className="text-blue-400" />
+                    <Icon size={22} className="text-blush" />
                   </div>
-                  <h3 className="text-white text-lg font-semibold mb-4">
+                  <h3 className="text-ivory text-lg font-semibold mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
+                  <p className="text-ivory/60 text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

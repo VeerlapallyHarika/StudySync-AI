@@ -76,8 +76,8 @@ export default function StudentSettingsPage() {
   }
 
   const inputClass =
-    'w-full liquid-glass rounded-2xl px-4 py-3 bg-transparent text-white placeholder:text-white/40 text-sm outline-none'
-  const labelClass = 'block text-white/55 text-xs uppercase tracking-wide mb-2'
+    'w-full liquid-glass rounded-2xl px-4 py-3 bg-transparent text-ivory placeholder:text-ivory/40 text-sm outline-none'
+  const labelClass = 'block text-ivory/55 text-xs uppercase tracking-wide mb-2'
 
   return (
     <StudentLayout>
@@ -86,7 +86,7 @@ export default function StudentSettingsPage() {
           <div>
             <Link
               to="/student/dashboard"
-              className="liquid-glass rounded-full px-5 py-2 text-white/80 hover:text-white text-sm font-medium flex items-center gap-2 transition-colors"
+              className="liquid-glass rounded-full px-5 py-2 text-ivory/80 hover:text-ivory text-sm font-medium flex items-center gap-2 transition-colors"
             >
               <ArrowLeft size={16} />
               Back to Dashboard
@@ -94,24 +94,24 @@ export default function StudentSettingsPage() {
           </div>
 
           <div>
-            <h1 className="text-4xl md:text-5xl text-white tracking-tight" style={{ fontFamily: "'Instrument Serif', serif" }}>
+            <h1 className="text-4xl md:text-5xl text-ivory tracking-tight" style={{ fontFamily: "'Instrument Serif', serif" }}>
               Settings
             </h1>
-            <p className="text-white/55 text-sm mt-2">Manage your account, preferences and credentials.</p>
+            <p className="text-ivory/55 text-sm mt-2">Manage your account, preferences and credentials.</p>
           </div>
 
           <GlassCard className="p-6 md:p-8">
             <div className="flex flex-wrap items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center font-semibold flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-ivory text-ink flex items-center justify-center font-semibold flex-shrink-0">
                 {(cachedProfile?.fullName ?? 'S').charAt(0)}
               </div>
               <div className="min-w-0 flex-1">
-                <p className="text-white font-medium">{cachedProfile?.fullName ?? 'Student'}</p>
-                <p className="text-white/50 text-sm truncate">{cachedProfile?.email ?? 'Sign in to view your profile'}</p>
+                <p className="text-ivory font-medium">{cachedProfile?.fullName ?? 'Student'}</p>
+                <p className="text-ivory/50 text-sm truncate">{cachedProfile?.email ?? 'Sign in to view your profile'}</p>
               </div>
               <Link
                 to="/student/profile"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 text-white px-5 py-2.5 text-sm font-medium transition-colors hover:bg-white/5"
+                className="inline-flex items-center gap-2 rounded-full border border-mauve/70 text-ivory px-5 py-2.5 text-sm font-medium transition-colors hover:bg-mauve/20"
               >
                 <UserRound size={15} />
                 View Profile
@@ -120,15 +120,15 @@ export default function StudentSettingsPage() {
           </GlassCard>
 
           <GlassCard className="p-6 md:p-8">
-            <div className="flex items-center gap-3 mb-6 text-white">
-              <BellRing size={18} className="text-violet-400" />
+            <div className="flex items-center gap-3 mb-6 text-ivory">
+              <BellRing size={18} className="text-blush" />
               <h2 className="text-2xl" style={{ fontFamily: "'Instrument Serif', serif" }}>
                 Notification Preferences
               </h2>
             </div>
 
             {prefsNotice ? (
-              <div className="liquid-glass rounded-2xl border border-emerald-400/25 px-4 py-3 text-xs text-emerald-100 mb-5">
+              <div className="liquid-glass rounded-2xl border border-ivory/30 px-4 py-3 text-xs text-ivory mb-5">
                 {prefsNotice}
               </div>
             ) : null}
@@ -142,21 +142,21 @@ export default function StudentSettingsPage() {
                     type="button"
                     onClick={() => togglePreference(option.key)}
                     aria-pressed={enabled}
-                    className="w-full flex items-center gap-4 liquid-glass rounded-2xl p-4 text-left hover:bg-white/5 transition-colors"
+                    className="w-full flex items-center gap-4 liquid-glass rounded-2xl p-4 text-left hover:bg-mauve/20 transition-colors"
                   >
                     <span className="flex-1">
-                      <span className="block text-white text-sm font-medium">{option.label}</span>
-                      <span className="block text-white/50 text-xs mt-0.5">{option.description}</span>
+                      <span className="block text-ivory text-sm font-medium">{option.label}</span>
+                      <span className="block text-ivory/50 text-xs mt-0.5">{option.description}</span>
                     </span>
                     <span
                       className={`w-12 h-7 rounded-full flex items-center px-1 transition-colors ${
-                        enabled ? 'bg-white' : 'bg-white/15'
+                        enabled ? 'bg-blush' : 'bg-ivory/15'
                       }`}
                       aria-hidden="true"
                     >
                       <span
                         className={`w-5 h-5 rounded-full transition-transform ${
-                          enabled ? 'translate-x-5 bg-black' : 'translate-x-0 bg-white/60'
+                          enabled ? 'translate-x-5 bg-ink' : 'translate-x-0 bg-ivory/60'
                         }`}
                       />
                     </span>
@@ -167,20 +167,20 @@ export default function StudentSettingsPage() {
           </GlassCard>
 
           <GlassCard className="p-6 md:p-8">
-            <div className="flex items-center gap-3 mb-6 text-white">
-              <KeyRound size={18} className="text-cyan-400" />
+            <div className="flex items-center gap-3 mb-6 text-ivory">
+              <KeyRound size={18} className="text-blush" />
               <h2 className="text-2xl" style={{ fontFamily: "'Instrument Serif', serif" }}>
                 Change Password
               </h2>
             </div>
 
             {notice ? (
-              <div className="liquid-glass rounded-2xl border border-emerald-400/25 px-4 py-3 text-xs text-emerald-100 mb-5">
+              <div className="liquid-glass rounded-2xl border border-ivory/30 px-4 py-3 text-xs text-ivory mb-5">
                 {notice}
               </div>
             ) : null}
             {error ? (
-              <div className="liquid-glass rounded-2xl border border-rose-400/25 px-4 py-3 text-xs text-rose-100 mb-5">
+              <div className="liquid-glass rounded-2xl border border-blush/35 px-4 py-3 text-xs text-blush mb-5">
                 {error}
               </div>
             ) : null}
@@ -223,7 +223,7 @@ export default function StudentSettingsPage() {
               <button
                 type="submit"
                 disabled={saving}
-                className="rounded-full px-6 py-3 bg-white text-black text-sm font-medium flex items-center gap-2 transition-colors hover:bg-white/90 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="rounded-full px-6 py-3 bg-blush text-ink text-sm font-medium flex items-center gap-2 transition-colors hover:bg-blush/90 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <Save size={16} />
                 {saving ? 'Saving...' : 'Update Password'}

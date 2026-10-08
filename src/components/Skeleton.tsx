@@ -61,11 +61,11 @@ export function SkeletonChart({ className = '' }: { className?: string }) {
 export function SkeletonTable({ rows = 6, columns = 4, className = '' }: { rows?: number; columns?: number; className?: string }) {
   return (
     <div className={`liquid-glass rounded-2xl overflow-hidden ${className}`} aria-hidden="true">
-      <div className="border-b border-white/10 px-5 py-4">
+      <div className="border-b border-plum/80 px-5 py-4">
         <div className="skeleton-shimmer h-5 w-36 skeleton-text" />
       </div>
       {Array.from({ length: rows }, (_, rowIndex) => (
-        <div key={rowIndex} className="flex items-center gap-6 border-b border-white/5 px-5 py-4">
+        <div key={rowIndex} className="flex items-center gap-6 border-b border-plum/60 px-5 py-4">
           {Array.from({ length: columns }, (_, columnIndex) => (
             <div
               key={columnIndex}

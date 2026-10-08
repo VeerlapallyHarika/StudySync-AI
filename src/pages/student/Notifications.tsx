@@ -13,9 +13,9 @@ import {
 import type { NotificationItem } from '../../types/admin'
 
 const toneClasses: Record<NotificationItem['tone'], string> = {
-  info: 'bg-cyan-400/15 text-cyan-100 border-cyan-300/20',
-  success: 'bg-emerald-400/15 text-emerald-100 border-emerald-300/20',
-  warning: 'bg-amber-400/15 text-amber-100 border-amber-300/20',
+  info: 'bg-mauve/30 text-ivory/90 border-mauve/50',
+  success: 'bg-ivory/10 text-ivory border-ivory/25',
+  warning: 'bg-plum/80 text-ivory/90 border-mauve/60',
 }
 
 export default function StudentNotificationsPage() {
@@ -59,7 +59,7 @@ export default function StudentNotificationsPage() {
           <div className="flex justify-between items-center gap-4 flex-wrap">
             <Link
               to="/student/dashboard"
-              className="liquid-glass rounded-full px-5 py-2 text-white/80 hover:text-white text-sm font-medium flex items-center gap-2 transition-colors"
+              className="liquid-glass rounded-full px-5 py-2 text-ivory/80 hover:text-ivory text-sm font-medium flex items-center gap-2 transition-colors"
             >
               <ArrowLeft size={16} />
               Back to Dashboard
@@ -82,22 +82,22 @@ export default function StudentNotificationsPage() {
           </div>
 
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl text-white tracking-tight" style={{ fontFamily: "'Instrument Serif', serif" }}>
+            <h1 className="text-4xl md:text-5xl text-ivory tracking-tight" style={{ fontFamily: "'Instrument Serif', serif" }}>
               Notifications
             </h1>
-            <p className="text-white/55 text-sm mt-2">
+            <p className="text-ivory/55 text-sm mt-2">
               {notifications.length > 0 ? `${unread} unread of ${notifications.length} total` : 'Stay tuned for updates about your study groups.'}
             </p>
           </div>
 
           {error ? (
-            <GlassCard className="p-8 text-center text-rose-100 border border-rose-400/25 bg-rose-500/10">{error}</GlassCard>
+            <GlassCard className="p-8 text-center text-blush border border-blush/35 bg-blush/12">{error}</GlassCard>
           ) : loading ? (
-            <GlassCard className="p-8 text-center text-white/70">Loading notifications...</GlassCard>
+            <GlassCard className="p-8 text-center text-ivory/70">Loading notifications...</GlassCard>
           ) : notifications.length === 0 ? (
             <GlassCard className="py-16 text-center">
-              <Inbox size={36} className="mx-auto text-white/30 mb-4" />
-              <p className="text-white/55 text-sm">You have no notifications.</p>
+              <Inbox size={36} className="mx-auto text-ivory/30 mb-4" />
+              <p className="text-ivory/55 text-sm">You have no notifications.</p>
             </GlassCard>
           ) : (
             <div className="space-y-3">

@@ -93,7 +93,7 @@ export default function StudentRegisterPage() {
           <div className="flex justify-start">
             <Link
               to="/"
-              className="liquid-glass rounded-full px-5 py-2 text-white/80 hover:text-white text-sm font-medium flex items-center gap-2 transition-colors"
+              className="liquid-glass rounded-full px-5 py-2 text-ivory/80 hover:text-ivory text-sm font-medium flex items-center gap-2 transition-colors"
             >
               <ArrowLeft size={16} />
               Back home
@@ -102,12 +102,12 @@ export default function StudentRegisterPage() {
 
           <div className="max-w-3xl mx-auto text-center">
             <h1
-              className="text-4xl md:text-5xl text-white mb-4 tracking-tight"
+              className="text-4xl md:text-5xl text-ivory mb-4 tracking-tight"
               style={{ fontFamily: "'Instrument Serif', serif" }}
             >
               Student Registration
             </h1>
-            <p className="text-white/60 text-base leading-relaxed">
+            <p className="text-ivory/60 text-base leading-relaxed">
               Capture academic data once and use it to build balanced study groups automatically.
             </p>
           </div>
@@ -117,12 +117,12 @@ export default function StudentRegisterPage() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between gap-4 flex-wrap">
                   <div>
-                    <h2 className="text-xl text-white font-semibold">Personal Information</h2>
-                    <p className="text-white/50 text-sm">Student identity and academic context.</p>
+                    <h2 className="text-xl text-ivory font-semibold">Personal Information</h2>
+                    <p className="text-ivory/50 text-sm">Student identity and academic context.</p>
                   </div>
                   <Link
                     to="/student/login"
-                    className="text-white/70 text-sm font-medium hover:text-white transition-colors"
+                    className="text-ivory/70 text-sm font-medium hover:text-ivory transition-colors"
                   >
                     Already registered? Login
                   </Link>
@@ -137,7 +137,7 @@ export default function StudentRegisterPage() {
                     { key: 'section', label: 'Section', autoComplete: 'off' },
                   ].map((field) => (
                     <div key={field.key} className="space-y-2">
-                      <label className="text-white/60 text-xs font-medium uppercase tracking-wide">
+                      <label className="text-ivory/60 text-xs font-medium uppercase tracking-wide">
                         {field.label}
                       </label>
                       <input
@@ -151,11 +151,11 @@ export default function StudentRegisterPage() {
                           }))
                         }
                         placeholder={`Enter ${field.label.toLowerCase()}`}
-                        className="w-full liquid-glass rounded-full px-5 py-3 bg-transparent text-white placeholder:text-white/40 text-sm outline-none"
+                        className="w-full liquid-glass rounded-full px-5 py-3 bg-transparent text-ivory placeholder:text-ivory/40 text-sm outline-none"
                         required
                       />
                       {errors[field.key] ? (
-                        <div className="liquid-glass rounded-2xl border border-rose-400/25 bg-rose-500/10 px-4 py-2 text-xs text-rose-100">
+                        <div className="liquid-glass rounded-2xl border border-blush/35 bg-blush/12 px-4 py-2 text-xs text-blush">
                           {errors[field.key]}
                         </div>
                       ) : null}
@@ -165,8 +165,8 @@ export default function StudentRegisterPage() {
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-white">
-                  <Lock size={18} className="text-cyan-400" />
+                <div className="flex items-center gap-3 text-ivory">
+                  <Lock size={18} className="text-blush" />
                   <h2 className="text-xl font-semibold">Account Security</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -187,7 +187,7 @@ export default function StudentRegisterPage() {
                     },
                   ].map((field) => (
                     <div key={field.key} className="space-y-2">
-                      <label className="text-white/60 text-xs font-medium uppercase tracking-wide">
+                      <label className="text-ivory/60 text-xs font-medium uppercase tracking-wide">
                         {field.label}
                       </label>
                       <div className="relative">
@@ -202,20 +202,20 @@ export default function StudentRegisterPage() {
                             }))
                           }
                           placeholder={field.placeholder}
-                          className="w-full liquid-glass rounded-full px-5 py-3 pr-12 bg-transparent text-white placeholder:text-white/40 text-sm outline-none"
+                          className="w-full liquid-glass rounded-full px-5 py-3 pr-12 bg-transparent text-ivory placeholder:text-ivory/40 text-sm outline-none"
                           required
                         />
                         <button
                           type="button"
                           onClick={() => field.setShow(!field.show)}
-                          className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-10"
+                          className="absolute right-4 top-1/2 -translate-y-1/2 text-ivory/50 hover:text-ivory transition-colors z-10"
                           aria-label={field.show ? `Hide ${field.label}` : `Show ${field.label}`}
                         >
                           {field.show ? <EyeOff size={16} /> : <Eye size={16} />}
                         </button>
                       </div>
                       {errors[field.key] ? (
-                        <div className="liquid-glass rounded-2xl border border-rose-400/25 bg-rose-500/10 px-4 py-2 text-xs text-rose-100">
+                        <div className="liquid-glass rounded-2xl border border-blush/35 bg-blush/12 px-4 py-2 text-xs text-blush">
                           {errors[field.key]}
                         </div>
                       ) : null}
@@ -225,14 +225,14 @@ export default function StudentRegisterPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3 text-white">
-                  <UserPlus size={18} className="text-cyan-400" />
+                <div className="flex items-center gap-3 text-ivory">
+                  <UserPlus size={18} className="text-blush" />
                   <h2 className="text-xl font-semibold">Academic Information</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {STUDENT_SUBJECTS.map((field) => (
                     <div key={field} className="space-y-2">
-                      <label className="text-white/60 text-xs font-medium uppercase tracking-wide">
+                      <label className="text-ivory/60 text-xs font-medium uppercase tracking-wide">
                         {field}
                       </label>
                       <input
@@ -242,11 +242,11 @@ export default function StudentRegisterPage() {
                         value={formValues.scores[field]}
                         onChange={(event) => updateScore(field, event.target.value)}
                         placeholder="0 - 100"
-                        className="w-full liquid-glass rounded-full px-5 py-3 bg-transparent text-white placeholder:text-white/40 text-sm outline-none"
+                        className="w-full liquid-glass rounded-full px-5 py-3 bg-transparent text-ivory placeholder:text-ivory/40 text-sm outline-none"
                         required
                       />
                       {errors[`scores.${field}`] ? (
-                        <div className="liquid-glass rounded-2xl border border-rose-400/25 bg-rose-500/10 px-4 py-2 text-xs text-rose-100">
+                        <div className="liquid-glass rounded-2xl border border-blush/35 bg-blush/12 px-4 py-2 text-xs text-blush">
                           {errors[`scores.${field}`]}
                         </div>
                       ) : null}
@@ -257,7 +257,7 @@ export default function StudentRegisterPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <h2 className="text-xl text-white font-semibold">Availability</h2>
+                  <h2 className="text-xl text-ivory font-semibold">Availability</h2>
                   <div className="flex flex-wrap gap-3">
                     {STUDENT_AVAILABILITY_OPTIONS.map((option) => (
                       <button
@@ -266,8 +266,8 @@ export default function StudentRegisterPage() {
                         onClick={() => setFormValues((currentValues) => ({ ...currentValues, availability: option }))}
                         className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${
                           formValues.availability === option
-                            ? 'bg-white text-black'
-                            : 'liquid-glass text-white hover:bg-white/5'
+                            ? 'bg-blush text-ink'
+                            : 'liquid-glass text-ivory hover:bg-mauve/20'
                         }`}
                       >
                         {option}
@@ -275,14 +275,14 @@ export default function StudentRegisterPage() {
                     ))}
                   </div>
                   {errors.availability ? (
-                    <div className="liquid-glass rounded-2xl border border-rose-400/25 bg-rose-500/10 px-4 py-2 text-xs text-rose-100">
+                    <div className="liquid-glass rounded-2xl border border-blush/35 bg-blush/12 px-4 py-2 text-xs text-blush">
                       {errors.availability}
                     </div>
                   ) : null}
                 </div>
 
                 <div className="space-y-4">
-                  <h2 className="text-xl text-white font-semibold">Learning Preference</h2>
+                  <h2 className="text-xl text-ivory font-semibold">Learning Preference</h2>
                   <div className="flex flex-wrap gap-3">
                     {STUDENT_PREFERENCE_OPTIONS.map((option) => (
                       <button
@@ -293,8 +293,8 @@ export default function StudentRegisterPage() {
                         }
                         className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${
                           formValues.learningPreference === option
-                            ? 'bg-white text-black'
-                            : 'liquid-glass text-white hover:bg-white/5'
+                            ? 'bg-blush text-ink'
+                            : 'liquid-glass text-ivory hover:bg-mauve/20'
                         }`}
                       >
                         {option}
@@ -302,7 +302,7 @@ export default function StudentRegisterPage() {
                     ))}
                   </div>
                   {errors.learningPreference ? (
-                    <div className="liquid-glass rounded-2xl border border-rose-400/25 bg-rose-500/10 px-4 py-2 text-xs text-rose-100">
+                    <div className="liquid-glass rounded-2xl border border-blush/35 bg-blush/12 px-4 py-2 text-xs text-blush">
                       {errors.learningPreference}
                     </div>
                   ) : null}
@@ -312,13 +312,13 @@ export default function StudentRegisterPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full bg-white rounded-full px-5 py-3 text-black text-sm font-semibold flex items-center justify-center gap-2 hover:bg-white/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-blush rounded-full px-5 py-3 text-ink text-sm font-semibold flex items-center justify-center gap-2 hover:bg-blush/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {submitting ? 'Registering...' : 'Register'}
               </button>
 
               {submitMessage ? (
-                <div className="liquid-glass rounded-2xl border border-rose-400/25 bg-rose-500/10 px-4 py-3 text-xs text-rose-100 text-center">
+                <div className="liquid-glass rounded-2xl border border-blush/35 bg-blush/12 px-4 py-3 text-xs text-blush text-center">
                   {submitMessage}
                 </div>
               ) : null}

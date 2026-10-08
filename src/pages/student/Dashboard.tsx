@@ -51,7 +51,7 @@ export default function StudentDashboardPage() {
     <StudentLayout>
       <section className="px-2 md:px-6 py-8 md:py-14">
         <div className="max-w-6xl mx-auto">
-          <GlassCard className="p-8 text-center text-white/70">Loading student dashboard...</GlassCard>
+          <GlassCard className="p-8 text-center text-ivory/70">Loading student dashboard...</GlassCard>
         </div>
       </section>
     </StudentLayout>
@@ -63,7 +63,7 @@ export default function StudentDashboardPage() {
     <StudentLayout>
       <section className="px-2 md:px-6 py-8 md:py-14">
         <div className="max-w-6xl mx-auto">
-          <GlassCard className="p-8 text-center text-rose-100 border border-rose-400/25 bg-rose-500/10">
+          <GlassCard className="p-8 text-center text-blush border border-blush/35 bg-blush/12">
             {error}
           </GlassCard>
         </div>
@@ -80,16 +80,16 @@ export default function StudentDashboardPage() {
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="max-w-3xl">
             <h1
-              className="text-4xl md:text-5xl text-white tracking-tight"
+              className="text-4xl md:text-5xl text-ivory tracking-tight"
               style={{ fontFamily: "'Instrument Serif', serif" }}
             >
               Welcome, {currentDashboard.welcomeName}
             </h1>
-            <p className="text-white/55 text-sm mt-3">Here is an overview of your academic standing and study group.</p>
+            <p className="text-ivory/55 text-sm mt-3">Here is an overview of your academic standing and study group.</p>
           </div>
 
           {error ? (
-            <div className="liquid-glass rounded-2xl border border-rose-400/25 bg-rose-500/10 px-4 py-3 text-xs text-rose-100">
+            <div className="liquid-glass rounded-2xl border border-blush/35 bg-blush/12 px-4 py-3 text-xs text-blush">
               {error}
             </div>
           ) : null}
@@ -103,12 +103,12 @@ export default function StudentDashboardPage() {
           <div className="space-y-5">
             <div>
               <h2
-                className="text-2xl text-white mb-2 tracking-tight"
+                className="text-2xl text-ivory mb-2 tracking-tight"
                 style={{ fontFamily: "'Instrument Serif', serif" }}
               >
                 Academic Summary
               </h2>
-              <p className="text-white/55 text-sm">Subject performance with live progress bars.</p>
+              <p className="text-ivory/55 text-sm">Subject performance with live progress bars.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -140,12 +140,12 @@ export default function StudentDashboardPage() {
           <div className="space-y-5">
             <div>
               <h2
-                className="text-2xl text-white mb-2 tracking-tight"
+                className="text-2xl text-ivory mb-2 tracking-tight"
                 style={{ fontFamily: "'Instrument Serif', serif" }}
               >
                 Group Members
               </h2>
-              <p className="text-white/55 text-sm">Each member card is ready for backend data.</p>
+              <p className="text-ivory/55 text-sm">Each member card is ready for backend data.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">

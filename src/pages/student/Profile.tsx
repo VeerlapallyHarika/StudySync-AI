@@ -130,7 +130,7 @@ export default function StudentProfilePage() {
     <StudentLayout>
       <section className="px-6 py-14 md:py-20">
         <div className="max-w-4xl mx-auto">
-          <GlassCard className="p-8 text-center text-white/70">Loading student profile...</GlassCard>
+          <GlassCard className="p-8 text-center text-ivory/70">Loading student profile...</GlassCard>
         </div>
       </section>
     </StudentLayout>
@@ -142,7 +142,7 @@ export default function StudentProfilePage() {
     <StudentLayout>
       <section className="px-6 py-14 md:py-20">
         <div className="max-w-4xl mx-auto">
-          <GlassCard className="p-8 text-center text-rose-100 border border-rose-400/25 bg-rose-500/10">
+          <GlassCard className="p-8 text-center text-blush border border-blush/35 bg-blush/12">
             {loadError}
           </GlassCard>
         </div>
@@ -160,7 +160,7 @@ export default function StudentProfilePage() {
           <div className="flex justify-between items-center gap-4 flex-wrap">
             <Link
               to="/student/dashboard"
-              className="liquid-glass rounded-full px-5 py-2 text-white/80 hover:text-white text-sm font-medium flex items-center gap-2 transition-colors"
+              className="liquid-glass rounded-full px-5 py-2 text-ivory/80 hover:text-ivory text-sm font-medium flex items-center gap-2 transition-colors"
             >
               <ArrowLeft size={16} />
               Back to Dashboard
@@ -168,17 +168,17 @@ export default function StudentProfilePage() {
 
             <button
               onClick={handleLogout}
-              className="text-white/55 text-sm font-medium hover:text-white transition-colors"
+              className="text-ivory/55 text-sm font-medium hover:text-ivory transition-colors"
             >
               Logout
             </button>
           </div>
 
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl text-white tracking-tight" style={{ fontFamily: "'Instrument Serif', serif" }}>
+            <h1 className="text-4xl md:text-5xl text-ivory tracking-tight" style={{ fontFamily: "'Instrument Serif', serif" }}>
               Student Profile
             </h1>
-            <p className="text-white/55 text-sm mt-2">Edit the fields that feed the group-matching and dashboard APIs.</p>
+            <p className="text-ivory/55 text-sm mt-2">Edit the fields that feed the group-matching and dashboard APIs.</p>
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-[1.2fr_0.8fr] gap-6">
@@ -192,7 +192,7 @@ export default function StudentProfilePage() {
                     { key: 'section', label: 'Section' },
                   ].map((field) => (
                     <div key={field.key} className="space-y-2">
-                      <label className="text-white/60 text-xs font-medium uppercase tracking-wide">{field.label}</label>
+                      <label className="text-ivory/60 text-xs font-medium uppercase tracking-wide">{field.label}</label>
                       <input
                         type="text"
                         value={formValues[field.key as keyof StudentRegistrationFormValues] as string}
@@ -202,11 +202,11 @@ export default function StudentProfilePage() {
                             [field.key]: event.target.value,
                           }))
                         }
-                        className="w-full liquid-glass rounded-full px-5 py-3 bg-transparent text-white placeholder:text-white/40 text-sm outline-none"
+                        className="w-full liquid-glass rounded-full px-5 py-3 bg-transparent text-ivory placeholder:text-ivory/40 text-sm outline-none"
                         required
                       />
                       {errors[field.key] ? (
-                        <div className="liquid-glass rounded-2xl border border-rose-400/25 bg-rose-500/10 px-4 py-2 text-xs text-rose-100">
+                        <div className="liquid-glass rounded-2xl border border-blush/35 bg-blush/12 px-4 py-2 text-xs text-blush">
                           {errors[field.key]}
                         </div>
                       ) : null}
@@ -215,22 +215,22 @@ export default function StudentProfilePage() {
                 </div>
 
                 <div className="space-y-4">
-                  <h2 className="text-xl text-white font-semibold">Scores</h2>
+                  <h2 className="text-xl text-ivory font-semibold">Scores</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {STUDENT_SUBJECTS.map((subject) => (
                       <div key={subject} className="space-y-2">
-                        <label className="text-white/60 text-xs font-medium uppercase tracking-wide">{subject}</label>
+                        <label className="text-ivory/60 text-xs font-medium uppercase tracking-wide">{subject}</label>
                         <input
                           type="number"
                           min="0"
                           max="100"
                           value={formValues.scores[subject]}
                           onChange={(event) => updateScore(subject, event.target.value)}
-                          className="w-full liquid-glass rounded-full px-5 py-3 bg-transparent text-white placeholder:text-white/40 text-sm outline-none"
+                          className="w-full liquid-glass rounded-full px-5 py-3 bg-transparent text-ivory placeholder:text-ivory/40 text-sm outline-none"
                           required
                         />
                         {errors[`scores.${subject}`] ? (
-                          <div className="liquid-glass rounded-2xl border border-rose-400/25 bg-rose-500/10 px-4 py-2 text-xs text-rose-100">
+                          <div className="liquid-glass rounded-2xl border border-blush/35 bg-blush/12 px-4 py-2 text-xs text-blush">
                             {errors[`scores.${subject}`]}
                           </div>
                         ) : null}
@@ -241,7 +241,7 @@ export default function StudentProfilePage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <h2 className="text-xl text-white font-semibold">Availability</h2>
+                    <h2 className="text-xl text-ivory font-semibold">Availability</h2>
                     <div className="flex flex-wrap gap-3">
                       {STUDENT_AVAILABILITY_OPTIONS.map((option) => (
                         <button
@@ -250,8 +250,8 @@ export default function StudentProfilePage() {
                           onClick={() => setFormValues((currentValues) => ({ ...currentValues, availability: option }))}
                           className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${
                             formValues.availability === option
-                              ? 'bg-white text-black'
-                              : 'liquid-glass text-white hover:bg-white/5'
+                              ? 'bg-blush text-ink'
+                              : 'liquid-glass text-ivory hover:bg-mauve/20'
                           }`}
                         >
                           {option}
@@ -261,7 +261,7 @@ export default function StudentProfilePage() {
                   </div>
 
                   <div className="space-y-4">
-                    <h2 className="text-xl text-white font-semibold">Learning Preference</h2>
+                    <h2 className="text-xl text-ivory font-semibold">Learning Preference</h2>
                     <div className="flex flex-wrap gap-3">
                       {STUDENT_PREFERENCE_OPTIONS.map((option) => (
                         <button
@@ -272,8 +272,8 @@ export default function StudentProfilePage() {
                           }
                           className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${
                             formValues.learningPreference === option
-                              ? 'bg-white text-black'
-                              : 'liquid-glass text-white hover:bg-white/5'
+                              ? 'bg-blush text-ink'
+                              : 'liquid-glass text-ivory hover:bg-mauve/20'
                           }`}
                         >
                           {option}
@@ -286,14 +286,14 @@ export default function StudentProfilePage() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="w-full bg-white rounded-full px-5 py-3 text-black text-sm font-semibold flex items-center justify-center gap-2 hover:bg-white/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full bg-blush rounded-full px-5 py-3 text-ink text-sm font-semibold flex items-center justify-center gap-2 hover:bg-blush/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {saving ? 'Saving...' : 'Save'}
                   <Save size={16} />
                 </button>
 
                 {notice ? (
-                  <div className="liquid-glass rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-4 py-3 text-xs text-emerald-100 text-center">
+                  <div className="liquid-glass rounded-2xl border border-ivory/30 bg-ivory/10 px-4 py-3 text-xs text-ivory text-center">
                     {notice}
                   </div>
                 ) : null}
@@ -302,8 +302,8 @@ export default function StudentProfilePage() {
 
             <div className="space-y-6">
               <GlassCard className="p-6">
-                <p className="text-white/55 text-xs uppercase tracking-wide mb-3">Profile Snapshot</p>
-                <div className="space-y-3 text-white/75 text-sm">
+                <p className="text-ivory/55 text-xs uppercase tracking-wide mb-3">Profile Snapshot</p>
+                <div className="space-y-3 text-ivory/75 text-sm">
                   <div className="liquid-glass rounded-2xl p-4">Student ID: {currentProfile.studentId}</div>
                   <div className="liquid-glass rounded-2xl p-4">Email: {currentProfile.email}</div>
                   <div className="liquid-glass rounded-2xl p-4">Availability: {currentProfile.availability}</div>
@@ -312,8 +312,8 @@ export default function StudentProfilePage() {
               </GlassCard>
 
               <GlassCard className="p-6">
-                <p className="text-white/55 text-xs uppercase tracking-wide mb-3">Ready for Backend</p>
-                <p className="text-white/70 text-sm leading-relaxed">
+                <p className="text-ivory/55 text-xs uppercase tracking-wide mb-3">Ready for Backend</p>
+                <p className="text-ivory/70 text-sm leading-relaxed">
                   These fields map directly to the Django student profile endpoints and can be persisted without changing the UI.
                 </p>
               </GlassCard>

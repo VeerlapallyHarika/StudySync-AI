@@ -27,12 +27,12 @@ export default function WorkflowSection() {
       <div className="max-w-3xl mx-auto">
         <Reveal className="text-center mb-16">
           <h2
-            className="text-4xl md:text-5xl text-white mb-4 tracking-tight"
+            className="text-4xl md:text-5xl text-ivory mb-4 tracking-tight"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             How it works
           </h2>
-          <p className="text-white/60 text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-ivory/60 text-base max-w-xl mx-auto leading-relaxed">
             A single pipeline carries every student from registration to a
             finished, balanced study group.
           </p>
@@ -45,17 +45,17 @@ export default function WorkflowSection() {
             return (
               <div key={step.label} className="flex flex-col items-center w-full">
                 <Reveal delayMs={i * 100} className="w-full max-w-md">
-                  <div className="liquid-glass rounded-2xl px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-colors">
+                  <div className="liquid-glass rounded-2xl px-6 py-4 flex items-center gap-4 hover:bg-mauve/20 transition-colors">
                     <div className="w-10 h-10 rounded-full liquid-glass flex items-center justify-center flex-shrink-0">
-                      <Icon size={18} className="text-cyan-400" />
+                      <Icon size={18} className="text-blush" />
                     </div>
-                    <span className="text-white text-sm font-medium">
+                    <span className="text-ivory text-sm font-medium">
                       {step.label}
                     </span>
                   </div>
                 </Reveal>
                 {!isLast && (
-                  <div className="text-white/30 text-lg my-2 leading-none">
+                  <div className="text-ivory/30 text-lg my-2 leading-none">
                     ↓
                   </div>
                 )}

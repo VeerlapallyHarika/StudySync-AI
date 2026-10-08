@@ -6,7 +6,7 @@ export default function AboutSection() {
       <div className="max-w-3xl mx-auto text-center">
         <Reveal>
           <h2
-            className="text-4xl md:text-5xl text-white mb-8 tracking-tight"
+            className="text-4xl md:text-5xl text-ivory mb-8 tracking-tight"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             Why Peer-to-Peer Study Group Agent?
@@ -14,11 +14,11 @@ export default function AboutSection() {
         </Reveal>
         <Reveal delayMs={120}>
           <div className="liquid-glass rounded-2xl p-8 md:p-10 text-left space-y-4">
-            <p className="text-white/70 text-base leading-relaxed">
+            <p className="text-ivory/70 text-base leading-relaxed">
               Traditional study groups are often created manually or
               randomly, resulting in unbalanced collaboration.
             </p>
-            <p className="text-white/70 text-base leading-relaxed">
+            <p className="text-ivory/70 text-base leading-relaxed">
               This platform analyzes academic performance using Machine
               Learning to automatically build balanced teams where students
               can learn from each other's strengths.

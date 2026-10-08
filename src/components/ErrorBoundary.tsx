@@ -23,11 +23,11 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-black flex items-center justify-center px-6">
+        <div className="min-h-screen bg-ink flex items-center justify-center px-6">
           <div className="max-w-md w-full">
             <GlassCard className="p-8 text-center">
-              <p className="text-white/50 text-sm uppercase tracking-widest mb-3">Something went wrong</p>
-              <h1 className="text-3xl text-white mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>
+              <p className="text-ivory/50 text-sm uppercase tracking-widest mb-3">Something went wrong</p>
+              <h1 className="text-3xl text-ivory mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>
                 An unexpected error occurred
               </h1>
               <button
@@ -35,7 +35,7 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
                 onClick={() => {
                   this.setState({ hasError: false })
                 }}
-                className="rounded-full bg-white text-black px-6 py-3 text-sm font-medium transition-colors hover:bg-white/90"
+                className="rounded-full bg-blush text-ink px-6 py-3 text-sm font-medium transition-colors hover:bg-blush/90"
               >
                 Try again
               </button>

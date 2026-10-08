@@ -12,17 +12,17 @@ export default function NotFoundPage() {
       <section className="px-6 py-20 md:py-28">
         <div className="max-w-2xl mx-auto">
           <GlassCard className="p-12 text-center">
-            <SearchX size={48} className="mx-auto text-white/30 mb-6" />
-            <p className="text-white/50 text-sm uppercase tracking-widest mb-3">Error 404</p>
-            <h1 className="text-5xl text-white mb-4 tracking-tight" style={{ fontFamily: "'Instrument Serif', serif" }}>
+            <SearchX size={48} className="mx-auto text-ivory/30 mb-6" />
+            <p className="text-ivory/50 text-sm uppercase tracking-widest mb-3">Error 404</p>
+            <h1 className="text-5xl text-ivory mb-4 tracking-tight" style={{ fontFamily: "'Instrument Serif', serif" }}>
               Page not found
             </h1>
-            <p className="text-white/55 text-sm leading-relaxed mb-8">
+            <p className="text-ivory/55 text-sm leading-relaxed mb-8">
               The page you're looking for doesn't exist or may have been moved. Let's get you back on track.
             </p>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 text-sm font-medium transition-colors hover:bg-white/90"
+              className="inline-flex items-center gap-2 rounded-full bg-blush text-ink px-6 py-3 text-sm font-medium transition-colors hover:bg-blush/90"
             >
               <Home size={16} />
               Back to Home

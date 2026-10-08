@@ -15,13 +15,13 @@ export default function Footer() {
             key={label}
             href={href}
             aria-label={label}
-            className="liquid-glass rounded-full p-4 text-white/80 hover:text-white hover:bg-white/5 transition-all"
+            className="liquid-glass rounded-full p-4 text-ivory/80 hover:text-ivory hover:bg-mauve/20 transition-all"
           >
             <Icon size={20} />
           </a>
         ))}
       </div>
-      <div className="text-center text-white/40 text-sm space-y-1">
+      <div className="text-center text-ivory/40 text-sm space-y-1">
         <p>© 2026 StudySync AI</p>
         <p>Peer-to-Peer Study Group Agent</p>
       </div>

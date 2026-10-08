@@ -4,6 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------- */
+/* Design tokens (new color system)   */
+/* ---------------------------------- */
+:root {
+  /* Palette */
+  --color-ink: #00030e; /* deepest navy — primary page background */
+  --color-navy: #0b0e1a; /* secondary navy — cards & elevated surfaces */
+  --color-plum: #2c1b2f; /* dark plum — secondary sections & gradients */
+  --color-mauve: #5e3a5c; /* muted purple — borders, accents, hover states */
+  --color-blush: #b47a9a; /* dusty rose — primary accent / highlight */
+  --color-ivory: #f3e9ec; /* soft off-white — primary text */
+
+  /* Semantic aliases */
+  --color-bg: var(--color-ink);
+  --color-surface: var(--color-navy);
+  --color-border: var(--color-plum);
+  --color-accent: var(--color-blush);
+  --color-text: var(--color-ivory);
+
+  /* Gradients */
+  --gradient-page: linear-gradient(180deg, #00030e 0%, #2c1b2f 55%, #5e3a5c 100%);
+  --gradient-surface: linear-gradient(160deg, rgba(11, 14, 26, 0.92) 0%, rgba(44, 27, 47, 0.72) 100%);
+  --gradient-accent: linear-gradient(135deg, #5e3a5c 0%, #b47a9a 100%);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -17,7 +42,8 @@ body,
 }
 
 body {
-  background-color: #000;
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -28,16 +54,41 @@ body {
     sans-serif;
 }
 
+/* Default border + placeholder colors come from the palette, never stock grays */
+*,
+*::before,
+*::after {
+  border-color: var(--color-plum);
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: rgba(243, 233, 236, 0.45);
+}
+
+::selection {
+  background: rgba(180, 122, 154, 0.35);
+  color: var(--color-ivory);
+}
+
 /* ---------------------------------- */
-/* Liquid glass core (unchanged)      */
+/* Liquid glass core (navy + plum)    */
 /* ---------------------------------- */
 .liquid-glass {
-  background: rgba(255, 255, 255, 0.01);
+  background: linear-gradient(
+    158deg,
+    rgba(11, 14, 26, 0.78) 0%,
+    rgba(44, 27, 47, 0.5) 55%,
+    rgba(11, 14, 26, 0.68) 100%
+  );
   background-blend-mode: luminosity;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: none;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(44, 27, 47, 0.85);
+  box-shadow:
+    inset 0 1px 1px rgba(243, 233, 236, 0.06),
+    0 18px 40px -28px rgba(0, 3, 14, 0.95);
   position: relative;
   overflow: hidden;
 }
@@ -50,18 +101,57 @@ body {
   padding: 1.4px;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.45) 0%,
-    rgba(255, 255, 255, 0.15) 20%,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, 0) 60%,
-    rgba(255, 255, 255, 0.15) 80%,
-    rgba(255, 255, 255, 0.45) 100%
+    rgba(180, 122, 154, 0.45) 0%,
+    rgba(94, 58, 92, 0.3) 20%,
+    rgba(94, 58, 92, 0) 40%,
+    rgba(94, 58, 92, 0) 60%,
+    rgba(94, 58, 92, 0.3) 80%,
+    rgba(180, 122, 154, 0.4) 100%
   );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Focus / active glass — dusty-rose glow, never neon */
+.liquid-glass:focus-within {
+  border-color: rgba(180, 122, 154, 0.55);
+  box-shadow:
+    inset 0 1px 1px rgba(243, 233, 236, 0.06),
+    0 0 0 1px rgba(180, 122, 154, 0.35),
+    0 0 22px -8px rgba(180, 122, 154, 0.45);
+}
+
+/* Primary (dusty-rose) buttons carry a very soft accent glow */
+.bg-blush.text-ink {
+  box-shadow:
+    0 12px 30px -18px rgba(180, 122, 154, 0.9),
+    0 0 0 1px rgba(180, 122, 154, 0.2);
+}
+
+.bg-blush.text-ink:hover {
+  box-shadow:
+    0 16px 34px -16px rgba(180, 122, 154, 0.95),
+    0 0 0 1px rgba(180, 122, 154, 0.4);
+}
+
+/* ---------------------------------- */
+/* Shared dashboard layout spacing    */
+/* ---------------------------------- */
+.dashboard-main > :first-child {
+  padding-top: 0;
+}
+
+/* ---------------------------------- */
+/* Ambient aurora decoration          */
+/* ---------------------------------- */
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
   pointer-events: none;
 }
 
@@ -166,7 +256,7 @@ body {
 .skeleton-shimmer {
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(44, 27, 47, 0.65);
 }
 
 .skeleton-shimmer::after {
@@ -176,25 +266,34 @@ body {
   transform: translateX(-100%);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.12) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(243, 233, 236, 0) 0%,
+    rgba(243, 233, 236, 0.09) 50%,
+    rgba(243, 233, 236, 0) 100%
   );
   animation: glass-shimmer 1.6s ease-in-out infinite;
 }
 
 .skeleton-text {
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(44, 27, 47, 0.85);
 }
 
 /* ---------------------------------- */
 /* Accessibility                      */
 /* ---------------------------------- */
 :focus-visible {
-  outline: 2px solid rgba(34, 211, 238, 0.9);
+  outline: 2px solid rgba(180, 122, 154, 0.95);
   outline-offset: 2px;
   border-radius: 6px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(180, 122, 154, 0.95);
+  outline-offset: 2px;
 }
 
 .skip-link {
@@ -204,8 +303,8 @@ body {
   z-index: 100;
   padding: 10px 18px;
   border-radius: 9999px;
-  background: white;
-  color: black;
+  background: var(--color-ivory);
+  color: var(--color-ink);
   font-size: 14px;
   font-weight: 600;
   transition: top 0.2s ease;
@@ -225,4 +324,3 @@ body {
     scroll-behavior: auto !important;
   }
 }
-
